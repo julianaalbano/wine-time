@@ -1,25 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
 
-function App() {
+  // Link
+} from "react-router-dom";
+
+import './App.css';
+import Thoughts from './thoughts';
+
+
+export default function App() {
+  return (
+      <Router>
+        <Switch>
+          <Route path="/our-thoughts">
+            <Thoughts />
+          </Route>
+          <Route path="/">
+            <Home />
+          </Route>
+        </Switch>
+      </Router>
+  )
+};
+
+function Home() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
+        <img src={"https://media1.giphy.com/media/9LXD9bu5zQp1MfiMHg/source.gif"} className="App-logo" alt="logo" />
+        <h1 className="title-header">
+          Wine Time
+        </h1>
+        <p className="title-subheader">
+          by Matt + Jules
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
       </header>
     </div>
   );
 }
-
-export default App;
